@@ -1,0 +1,15 @@
+<template>
+    <lightning-card
+        title="WireGetFieldValue"
+        icon-name="standard:account">
+        <template if:true={customObject.data}>
+            <ul class="slds-m-around_medium">
+                <template for:each={selectedValues} for:item="value">
+                    <li key={value}>
+                        {value}
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+</template>
