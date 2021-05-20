@@ -1,15 +1,17 @@
 <template>
     <lightning-card
-        title="WireGetFieldValue"
+        title="Display record details"
         icon-name="standard:account">
         <template if:true={customObject.data}>
-            <ul class="slds-m-around_medium">
+            <ul class="slds-p-horizontal_small">
                 <template for:each={selectedValues} for:item="value">
                     <li key={value}>
                         {value}
                     </li>
                 </template>
             </ul>
+            <lightning-button slot="actions" label="Copy" onclick={copyValue}></lightning-button>
         </template>
     </lightning-card>
+    <textarea disabled class="dummy-input-record-reader" style="position:fixed;top:-5rem;height:1px;width:10px;" ></textarea>
 </template>
