@@ -1,17 +1,20 @@
 <template>
     <lightning-card
-        title="Display data from fetch()"
+        title="REST API"
         icon-name="standard:account">
+        <lightning-button slot="actions" label="GET" onclick={fetchData}></lightning-button>
+        <lightning-button slot="actions" label="POST" onclick={postData}></lightning-button>
         <template if:true={data}>
             <ul class="slds-p-horizontal_small">
                 <template for:each={data} for:item="item">
+                    <span class="slds-avatar" key={item.id}>
+                        <img alt="Person name" src={item.avatar_url} title={item.login} />
+                    </span>
                     <li key={item.id}>
                         {item.login}
                     </li>
                 </template>
             </ul>
-            <lightning-button slot="actions" label="Copy" onclick={copyValue}></lightning-button>
         </template>
     </lightning-card>
-    <textarea disabled class="dummy-input-record-reader" style="position:fixed;top:-5rem;height:1px;width:10px;" ></textarea>
 </template>
